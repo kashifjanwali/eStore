@@ -1,0 +1,62 @@
+/* Card zoom out */
+.card {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+
+/* Footer | Social Media Icons */
+.ftr .social {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.ftr .social>a {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin: 0 8px;
+    color: white;
+    opacity: 0.8;
+    transition: transform 0.24s ease-out;
+}
+
+/* Icons Zoom Out */
+.ftr .social>a:hover {
+    opacity: 1;
+    transform: scale(1.13);
+}
+
+.ftr .social>.lin:hover {
+    background-color: #0A66C2;
+}
+
+.ftr .social>.gtb:hover {
+    background-color: black;
+}
+
+.ftr .social>.twr:hover {
+    background-color: #1DA1F2;
+}
+
+.ftr .social>.fb:hover {
+    background-color: #1778F2;
+}
+
+.ftr .social>.yt:hover {
+    background-color: #FF0000;
+}
+
+
+/* hr */
