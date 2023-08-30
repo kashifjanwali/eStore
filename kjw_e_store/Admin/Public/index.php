@@ -17,12 +17,12 @@
 
 <body>
     <!-- Top Bar -->
-    <div class="container-fluid bg-light">
+    <div class="container-fluid bg-light sticky-top">
         <?php include "../Modules/topbar.php" ?>
     </div>
 
     <!-- Nav Bar -->
-    <div class="container-fluid bg-dark text-light sticky-top">
+    <div class="container-fluid bg-dark text-light">
         <?php include "../Modules/navbar.php" ?>
     </div>
 
@@ -37,7 +37,7 @@
 
             <div class="col-10">
                 <!-- Center Section -->
-
+                <?php include "../category.php" ?>
             </div>
         </div>
     </div>
