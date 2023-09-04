@@ -44,12 +44,13 @@ $all_cat = $new_cat->getData();
                             </td>
                             <td>
                                 <a class="btn btn-warning" href="../category.php">Edit</a>
-                                <a class="btn btn-danger" href="../Public/delete.php?cat_id=<?php echo $cat['cat_id']; ?>">Delete</a>
+                                <a class="btn btn-danger" href="./delete.php?cat_id=<?php echo $cat['cat_id']; ?>">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
+            <a style="margin-left: 315px; margin-top: 18px" href="index.php" class="btn btn-secondary">Main Page</a>
         </div>
 
 

@@ -8,19 +8,29 @@ use App\Db;
 $new_cat = new Db();
 
 if (isset($_POST['insert_cat'])) {
+    $cat_id = $_POST['cat_id'];
     $category = $_POST['cat_title'];
     $new_cat->addData($category);
+    header("Location: ./manage_cat.php");
 
+    $cat_id = $_GET("cat_id") ?? null;
+    if ($cat_id) {
+        $catID = $new_cat->getID($cat_id);
+    } else {
+        $catID = array();
+    }
 }
 
 ?>
-<div class="col-8">
+<div class="w-50 mx-auto">
     <form method="post" class="form">
         <p class="text-center pt-3 lead fs-3">Add / Edit Categories</p>
         <div class="px-5 pb-3">
             <label for="cat_title" class="form-label">Category Name</label>
             <input type="text" id="cat_title" name="cat_title" placeholder="Electronics" class="form-control">
-            <button type="submit" name="insert_cat" class="my-3 btn btn-success">Submit</button>
         </div>
+        <input type="hidden" name="cat_id" value="<?php echo $cat_id ?>">
+        <button type="submit" name="insert_cat" class="my-3 ms-5 btn btn-success">Submit</button>
+        <a href="index.php" class="btn btn-danger">Cancel</a>
     </form>
 </div>
