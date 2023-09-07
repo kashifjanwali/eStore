@@ -62,19 +62,19 @@ if (isset($_POST['add_products'])) {
                 <?php echo $title; ?>
             </p>
 
-            <form method="post" enctype="multipart/form-data" class="form">
+            <form action="" method="post" enctype="multipart/form-data" class="form">
                 <div class="form-outline mb-4">
 
                     <!-- Product Name -->
                     <div class="mb-5">
-                        <label for="prod_title" class="form-label lead">Product Title</label>
+                        <label for="prod_title" class="form-label lead">Product Title <sup class="text-danger fw-bold">*</sup></label>
                         <input type="text" name="product_title" id="prod_title" class="form-control"
                             placeholder="Enter your product name" autocomplete="off" required>
                     </div>
 
                     <!-- Product Description -->
                     <div class="mb-5">
-                        <label for="prod_desc" class="form-label lead">Product Description</label>
+                        <label for="prod_desc" class="form-label lead">Product Description <sup class="text-danger fw-bold">*</sup></label>
                         <textarea type="text" name="product_desc" id="prod_desc" class="form-control"
                             placeholder="Enter your product description here..." autocomplete="off" required cols="30"
                             rows="5"></textarea>
@@ -82,7 +82,7 @@ if (isset($_POST['add_products'])) {
 
                     <!-- Product Keywords -->
                     <div class="mb-5">
-                        <label for="prod_keywords" class="form-label lead"> Product Keywords </label>
+                        <label for="prod_keywords" class="form-label lead"> Product Keywords <sup class="text-danger fw-bold">*</sup></label>
                         <textarea type="text" name="product_keywords" id="prod_keywords" class="form-control txt-area"
                             placeholder="Enter your product keywords here... press (,) after each keyword"
                             autocomplete="off" required cols="30" rows="5"></textarea>
@@ -91,9 +91,9 @@ if (isset($_POST['add_products'])) {
                     <!-- Categories -->
                     <div class="mb-5">
                         <select name="cat_title" class="form-select">
-                            <option selected>Select a Category of Your Product</option>
+                            <option selected>Select a Category of Your Product <sup class="text-danger fw-bold">*</sup></option>
                             <?php foreach ($all_cats as $cat): ?>
-                                <option value="<?php echo $cat['cat_id'] ?>"><?php echo $cat['cat_title'] ?></option>
+                                <option value="<?php echo $cat['cat_id'] ?>" required><?php echo $cat['cat_title'] ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -101,37 +101,37 @@ if (isset($_POST['add_products'])) {
                     <!-- Categories -->
                     <div class="mb-5">
                         <select name="b_title" class="form-select">
-                            <option selected>Select a Brand of Your Product</option>
+                            <option selected>Select a Brand of Your Product <sup class="text-danger fw-bold">*</sup></option>
                             <?php foreach ($all_brands as $brand): ?>
-                                <option value="<?php echo $brand['b_id'] ?>"><?php echo $brand['b_title'] ?></option>
+                                <option value="<?php echo $brand['b_id'] ?>" required><?php echo $brand['b_title'] ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
 
                     <!-- Image - 1 -->
                     <div class="mb-5">
-                        <label for="prod_img1" class="form-label lead"> Product Image 1 </label>
+                        <label for="prod_img1" class="form-label lead"> Product Image 1 <sup class="text-danger fw-bold">*</sup></label>
                         <input type="file" name="product_image1" id="prod_img1" class="form-control" required>
                     </div>
 
 
                     <!-- Image - 2 -->
                     <div class="mb-5">
-                        <label for="prod_img2" class="form-label lead"> Product Image 2 </label>
-                        <input type="file" name="product_image2" id="prod_img2" class="form-control" required>
+                        <label for="prod_img2" class="form-label lead"> Product Image 2 <span class="">(Optional)</span></label>
+                        <input type="file" name="product_image2" id="prod_img2" class="form-control">
                     </div>
 
 
                     <!-- Image - 3 -->
                     <div class="mb-5">
-                        <label for="prod_img3" class="form-label lead"> Product Image 2 </label>
-                        <input type="file" name="product_image3" id="prod_img3" class="form-control" required>
+                        <label for="prod_img3" class="form-label lead"> Product Image 2 <span class="">(Optional)</span></label>
+                        <input type="file" name="product_image3" id="prod_img3" class="form-control">
                     </div>
 
 
                     <!-- Product Price -->
                     <div class="mb-5">
-                        <label for="prod_price" class="form-label lead"> Product Price </label>
+                        <label for="prod_price" class="form-label lead"> Product Price <sup class="text-danger fw-bold">*</sup></label>
                         <input type="number" name="product_price" id="prod_price" class="form-control txt-area"
                             placeholder="Enter The Product's Price" autocomplete="off" required>
                     </div>

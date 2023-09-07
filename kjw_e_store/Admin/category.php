@@ -1,36 +1,35 @@
-<!-- Bootstrap@5.3 CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <?php
 require_once "../App/database.php";
 use App\Db;
-
 $new_cat = new Db();
 
-if (isset($_POST['insert_cat'])) {
+
+if (isset($_POST['insert_cat'])) 
+{
     $cat_id = $_POST['cat_id'];
     $category = $_POST['cat_title'];
-    $new_cat->addData($category);
-    header("Location: ./manage_cat.php");
+    $new_cat->addCategory($category);
+    // header("Location: ./index.php?manage_category");
 
-    $cat_id = $_GET("cat_id") ?? null;
+    $cat_id = $_GET['cat_id'] ?? null;
     if ($cat_id) {
-        $catID = $new_cat->getID($cat_id);
+        $new_cat->getCategoryID($cat_id);
     } else {
-        $catID = array();
+        array();
     }
 }
 
 ?>
 <div class="w-50 mx-auto">
+    <p class="text-center pt-3 lead fs-3">Add / Edit Categories</p>
+
     <form method="post" class="form">
-        <p class="text-center pt-3 lead fs-3">Add / Edit Categories</p>
         <div class="px-5 pb-3">
-            <label for="cat_title" class="form-label">Category Name</label>
+            <label for="cat_title" class="form-label lead">Category Name</label>
             <input type="text" id="cat_title" name="cat_title" placeholder="Electronics" class="form-control">
         </div>
         <input type="hidden" name="cat_id" value="<?php echo $cat_id ?>">
         <button type="submit" name="insert_cat" class="my-3 ms-5 btn btn-success">Submit</button>
-        <a href="index.php" class="btn btn-danger">Cancel</a>
+        <a href="index.php?manage_category" class="btn btn-danger">Cancel</a>
     </form>
 </div>

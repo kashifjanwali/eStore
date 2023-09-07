@@ -5,7 +5,7 @@ use App\Db;
 
 $new_cat = new Db();
 
-$all_cat = $new_cat->getData();
+$all_cat = $new_cat->getCategory();
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ $all_cat = $new_cat->getData();
 
     <body>
         <div class="container-fluid">
-            <p class="text-center fw-bold fs-3 text-danger bg-success py-2">
+            <p class="text-center fw-bold fs-3 text-danger py-2">
                 <?php echo $t; ?>
             </p>
             <table class="table w-50 mx-auto lead">
@@ -44,13 +44,13 @@ $all_cat = $new_cat->getData();
                             </td>
                             <td>
                                 <a class="btn btn-warning" href="../category.php">Edit</a>
-                                <a class="btn btn-danger" href="./delete.php?cat_id=<?php echo $cat['cat_id']; ?>">Delete</a>
+                                <a class="btn btn-danger" href="./delete_cat.php?cat_id=<?php echo $cat['cat_id']; ?>">Delete</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <a style="margin-left: 315px; margin-top: 18px" href="index.php" class="btn btn-secondary">Main Page</a>
+            <!-- <a style="margin-left: 315px; margin-top: 18px" href="index.php" class="btn btn-secondary">Main Page</a> -->
         </div>
 
 
